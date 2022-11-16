@@ -13,12 +13,24 @@ body{
     align-items: center;
 }
 
+header{
+    text-align: center;
+}
+
+main{
+    width: 100%;
+    min-height: 80vh;
+}
+
 .buttons-box{
+    margin: auto;
+    /* width: 50%; */
     display: flex;
     flex-direction: row;
 }
 
 button{
+    /* width: 100%; */
     margin: auto;
     padding: 1rem;
     background: #0069ed;
@@ -29,8 +41,6 @@ button{
     text-align: center;
     transition: background 250ms ease-in-out, 
                 transform 150ms ease;
-    -webkit-appearance: none;
-    -moz-appearance: none;
 }
 
 button:hover,
@@ -45,4 +55,14 @@ button:focus {
 
 button:active {
     transform: scale(0.99);
+}
+
+.imgContainer{
+    margin: auto;
+    padding: 10px;
+    width: 50%;
+}
+
+img{
+    width: 100%;
 }
