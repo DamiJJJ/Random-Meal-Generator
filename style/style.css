@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 *{
     box-sizing: border-box;
-    font-family: Arial;
+    font-family: 'Roboto', sans-serif;
 }
 
 body{
+    background-color: rgb(90, 90, 90);
     min-height: 100vh;
     margin: 0;
     overflow-y: auto;
@@ -14,26 +17,38 @@ body{
 }
 
 header{
+    width: 75%;
     text-align: center;
 }
 
 main{
-    width: 100%;
+    width: 75%;
     min-height: 80vh;
+}
+
+footer{
+    width: 75%;
+    text-align: center;
 }
 
 .buttons-box{
     margin: auto;
-    /* width: 50%; */
     display: flex;
     flex-direction: row;
 }
 
+h1, h2, h5{
+    text-align: center;
+}
+
+div{
+    padding: 10px;
+}
+
 button{
-    /* width: 100%; */
     margin: auto;
     padding: 1rem;
-    background: #0069ed;
+    background: #ed7e00;
     color: white;
     cursor: pointer;
     font-size: 100%;
@@ -45,11 +60,11 @@ button{
 
 button:hover,
 button:focus {
-    background: #0053ba;
+    background: #ba6900;
 }
 
 button:focus {
-    outline: 1px solid #fff;
+    outline: 1px solid rgb(0, 0, 0);
     outline-offset: -4px;
 }
 
@@ -57,12 +72,80 @@ button:active {
     transform: scale(0.99);
 }
 
-.imgContainer{
-    margin: auto;
-    padding: 10px;
-    width: 50%;
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+}
+
+.meal-title-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img{
-    width: 100%;
+    width: 75%;
 }
+
+.ingredients{
+    text-align: left;
+    padding-left: 20px;
+}
+
+.recipe-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    grid-column: 1/3;
+}
+
+.video{
+    border: 0;
+    aspect-ratio: 16 / 9;
+	height: 100%;
+	width: 100%;
+}
+
+/* responsive */
+@media (max-width: 868px) { 
+    main{
+        width: 100%;
+    }
+
+    img{
+        width: 50%;
+    }
+    .grid-container{
+        display: block;
+    }
+
+    .ingredients-container{
+        text-align: center;
+    }
+
+    .ingredients{
+        text-align: center;
+        padding: 0;
+    }
+
+    ul{
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+ }
