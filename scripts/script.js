@@ -10,13 +10,11 @@ const generateMeal = () => {
     })
     .catch(error => {
         error => console.error(error)
-    })   
+    })
 }
 
 const printMeal = (meal) => {
     const ingredients = [];
-    console.log(meal)
-
     // Put all ingredients in array 
     for(let i = 1; i <= 20; i++){
         if(meal[`strIngredient${i}`]){

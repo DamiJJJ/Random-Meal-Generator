@@ -13,8 +13,9 @@
         <h2>Wygeneruj sobie danie!</h2>
     </header>
     <main>       
-        <div class="buttons-box">
-            <button id="get_meal">Generowanie</button>
+        <div class="buttons-box" id="buttons-box"> 
+            <div id="category"></div>      
+            <button id="get_meal">Generowanie</button>                            
         </div>
         <div id="meal" class="grid-container"></div>
     </main>
@@ -22,6 +23,7 @@
         <p>Aplikacja generująca losowy przepis - 2022</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="scripts/getCategories.js"></script>
     <script src="scripts/script.js"></script>
 </body>
 </html>
