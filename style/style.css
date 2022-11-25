@@ -17,24 +17,32 @@ body{
 }
 
 header{
+    margin: auto;
     width: 75%;
     text-align: center;
 }
 
 main{
+    margin: auto;
     width: 75%;
     min-height: 80vh;
 }
 
 footer{
+    margin: auto;
     width: 75%;
     text-align: center;
 }
 
 .buttons-box{
-    margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    text-align: center;
+}
+
+select{
+    margin: 5px auto;
+    /* width: 50%; */
 }
 
 h1, h2, h5{
