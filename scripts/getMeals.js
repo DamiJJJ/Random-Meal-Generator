@@ -1,16 +1,43 @@
 const button = document.getElementById('get_meal');
 const meal_container = document.getElementById('meal');
 
+const random = (min, max) => {
+    return Math.floor(Math.random() * (max - min) + min)
+}
+
 const generateMeal = () => {
+    let category_option = document.getElementById('categories').value;
+    if(category_option == 'Dowolna'){
+        let URL = 'https://www.themealdb.com/api/json/v1/1/random.php';  
+        axios.get(URL).then(response => {          
+            printMeal(response.data.meals[0])   
+        })
+        .catch(error => {
+            error => console.error(error)
+        })     
+    }
+    else{
+        let URL = `https://www.themealdb.com/api/json/v1/1/filter.php?c=${category_option}`;
+        axios.get(URL).then(response => {
+            random_number = random(0, response.data.meals.length);
+            meal_name = response.data.meals[random_number].strMeal;
+            
+            generateMealByName(meal_name);
+        })
+        .catch(error => {
+            error => console.error(error)
+        })       
+    }
+}
 
-    const URL = 'https://www.themealdb.com/api/json/v1/1/random.php'
-
-    axios.get(URL).then(response => {
-        printMeal(response.data.meals[0])     
-    })
-    .catch(error => {
-        error => console.error(error)
-    })
+const generateMealByName = (meal_name) => {
+        let URL = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal_name}`;         
+            axios.get(URL).then(response => {          
+                printMeal(response.data.meals[0]);
+        }) 
+        .catch(error => {
+            error => console.error(error)
+        })   
 }
 
 const printMeal = (meal) => {
