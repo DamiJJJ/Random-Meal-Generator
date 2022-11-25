@@ -1,4 +1,4 @@
-category_box = document.getElementById('category');
+const category_box = document.getElementById('category');
 
 const getCategories = () => {
 
@@ -21,13 +21,13 @@ const printCategories = (category) => {
     }
 
     const newCategorySelect = `
+    <form>
     <label for="categories">Kategoria:</label>
             <select name="categories" id="categories">           
-    <option value="Dowolny">Dowolna</option>
-    ${categories.map(category => `<option value="${category}">${category}</option>`)}
-    </select>`;
+    <option value="Dowolna">Dowolna</option>
+    ${categories.map(category => `<option value="${category}">${category}</option>`).join('')}
+    </select>
+    </form>`;
 
     category_box.innerHTML = newCategorySelect;
 }
-
-window.addEventListener('load', getCategories)
