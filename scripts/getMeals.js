@@ -7,7 +7,7 @@ const random = (min, max) => {
 
 const generateMeal = () => {
     let category_option = document.getElementById('categories').value;
-    if(category_option == 'Dowolna'){
+    if(category_option == 'Random'){
         let URL = 'https://www.themealdb.com/api/json/v1/1/random.php';  
         axios.get(URL).then(response => {          
             printMeal(response.data.meals[0])   
@@ -57,16 +57,16 @@ const printMeal = (meal) => {
     <div class="meal-title-container">
         <div class="titles">
             <h1>${meal.strMeal}</h1>
-            <h2>Kategoria: ${meal.strCategory}</h2>
-            <h2>Kraj: ${meal.strArea}</h2>
-            <h5>Tagi: ${meal.strTags}</h5>
+            <h2>Category: ${meal.strCategory}</h2>
+            <h2>Country: ${meal.strArea}</h2>
+            <h5>Tags: ${meal.strTags}</h5>
         </div>
     </div>
     <div class="img-container">
         <img src="${meal.strMealThumb}" alt="Meal Image">
     </div>
     <div class="ingredients-container">
-        <h2 class="ingredients">Składniki:</h2>
+        <h2 class="ingredients">Ingredients:</h2>
         <ul>
             ${ingredients.map(ingredient => `<li>${ingredient}</li>`).join('')}
         </ul>
@@ -75,7 +75,7 @@ const printMeal = (meal) => {
         <p>${meal.strInstructions}</p>
     </div>
     <div class="video-container">
-        <h2>Poradnik wideo:</h2>
+        <h2>Video tutorial:</h2>
         <iframe class="video" src="https://www.youtube.com/embed/${meal.strYoutube.slice(-11)}" allowfullscreen>
     </iframe>
     </div>`;

@@ -6,22 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="img/burger.png">
     <link rel="stylesheet" href="style/style.css">
-    <title>Generator dań</title>
+    <title>Meal Generator</title>
 </head>
 <body onload="getCategories()">
     <header>
-        <h1>Głodny?</h1>
-        <h2>Wygeneruj sobie danie!</h2>
+        <h1>Hungry?</h1>
+        <h2>Generate yourself a dish!</h2>
     </header>
     <main>       
         <div class="buttons-box" id="buttons-box"> 
             <div id="category"></div>      
-            <button id="get_meal">Generowanie</button>                            
+            <button id="get_meal">Generate!</button>                            
         </div>
         <div id="meal" class="grid-container"></div>
     </main>
     <footer>
-        <p>Aplikacja generująca losowy przepis - 2022</p>
+        <p>Generate random meal app - 2022</p>
     </footer>    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>   
     <script src="scripts/getCategories.js"></script>
