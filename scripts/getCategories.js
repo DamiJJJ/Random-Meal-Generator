@@ -22,9 +22,9 @@ const printCategories = (category) => {
 
     const newCategorySelect = `
     <form>
-    <label for="categories">Kategoria:</label>
+    <label for="categories">Category:</label>
             <select name="categories" id="categories">           
-    <option value="Dowolna">Dowolna</option>
+    <option value="Random">Random</option>
     ${categories.map(category => `<option value="${category}">${category}</option>`).join('')}
     </select>
     </form>`;
